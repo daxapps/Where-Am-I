@@ -56,27 +56,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
             } else {
                 
-//                if let p = placemarks?[0] {
+                if let p = placemarks?[0] {
                     
-//                    var subThoroughfare = ""
-                
-                if placemarks!.count>0 {
-                    let p = (placemarks![0])
+                    var subThoroughfare:String = ""
                     
                     if (p.subThoroughfare != nil) {
                         
-                        let subThoroughfare = p.subThoroughfare!
+                        subThoroughfare = p.subThoroughfare!
+                        
+                    }
                     
-                    
-//                    if (p.subLocality != nil) {
-                            
-//                        _ = p.subLocality!
- 
-                    
-                    
-                    self.addressLabel.text = "\(subThoroughfare) \(p.thoroughfare!) \n \(p.subLocality) \n \(p.subAdministrativeArea!) \n \(p.postalCode!) \n \(p.country!)"
+                    self.addressLabel.text = "\(subThoroughfare) \(p.thoroughfare!) \n \(p.subLocality!) \n \(p.subAdministrativeArea!) \n \(p.postalCode!) \n \(p.country!)"
                     
                 }
+                
+                
             }
             
         }
@@ -84,8 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
-        
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
